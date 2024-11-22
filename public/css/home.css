@@ -1,0 +1,31 @@
+/* Base canvas styling */
+.chart-canvas {
+    width: 100%;
+    /* Ensure the canvas takes up the full width of its container */
+    height: 300px;
+    /* Default height for larger screens */
+}
+
+/* Smaller height for mobile devices (extra small screens) */
+@media (max-width: 576px) {
+    .chart-canvas {
+        height: 200px;
+        /* Reduced height for small screens */
+    }
+}
+
+/* Medium-height for tablets and small devices (smaller tablets) */
+@media (max-width: 768px) {
+    .chart-canvas {
+        height: 250px;
+        /* Slightly larger height for medium screens */
+    }
+}
+
+/* Large screens (desktops and larger) */
+@media (min-width: 992px) {
+    .chart-canvas {
+        height: 350px;
+        /* Larger height for desktops */
+    }
+}

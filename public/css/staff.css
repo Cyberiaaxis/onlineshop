@@ -1,0 +1,154 @@
+/* Body styling */
+body {
+    background-color: #f8f9fa;
+    /* Light background for better contrast */
+    /* display: flex; */
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Sidebar styling */
+#sidebar {
+    height: 100vh;
+    width: 210px;
+    transition: width 0.3s;
+    border-right: 1px solid #0056b3;
+    background-color: #343a40;
+    color: white;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+    padding-top: 50px;
+    overflow: hidden;
+}
+
+#sidebar.collapsed {
+    width: 60px;
+}
+
+/* Navigation link styling */
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #f8f9fa;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffcc00;
+}
+
+.icon {
+    width: 24px;
+    text-align: center;
+}
+
+.text {
+    margin-left: 10px;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+#sidebar.collapsed .text {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Table container styling */
+.table-container {
+    flex-grow: 1;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+#sidebar.collapsed+.table-container {
+    margin-left: 60px;
+}
+
+/* Application bar styling */
+.app-bar {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Menu item styling */
+.menu-item {
+    color: #ffffff;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.menu-item:hover {
+    color: #ffcc00;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    background-color: #343a40;
+    /* padding: 0.5rem 0; */
+}
+
+.dropdown-item {
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: #495057;
+    color: #ffcc00;
+}
+
+/* Cart icon styling */
+.cart-icon {
+    font-size: 2rem;
+    color: #ffcc00;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.cart-icon:hover {
+    transform: rotate(20deg) scale(1.2);
+    color: #ff9900;
+}
+
+/* Toggle button styling */
+.toggle-btn {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.toggle-btn:hover {
+    transform: scale(1.2);
+    color: #ffcc00;
+}
+
+.toggle-btn:active {
+    transform: rotate(90deg);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    #sidebar {
+        position: absolute;
+        z-index: 1000;
+        height: 100%;
+        left: -250px;
+        transition: left 0.3s;
+    }
+
+    #sidebar.show {
+        left: 0;
+    }
+
+    .table-container {
+        margin-left: 0;
+    }
+}
